@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="image/LOGO GRIZEN CLOTCH.png" width="100" height="100">
+        </div>
+        
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="beranda">
+        <img src='image/banner.png' width="1561" height="512">
+        <h1>Selamat Datang di Grizen clotch</h1>
+        <p>barang Berkualitas dengan Harga yang terjangkau</p>
+    </section>
+
+    <section class="produk">
+        <div class="produk-item">
+            <img src="image/model 1.jpg" alt="Produk 1">
+            <h2>Paket Baju Casual</h2>
+            <p>Harga: Rp 150.000</p>
+            <button onclick="showPurchaseModal('Produk 1', 150000)">Beli</button>
+        </div>
+        <div class="produk-item">
+            <img src="image/gambar 2.png" alt="Produk 2">
+            <h2>Paket baju Gen z</h2>
+            <p>Harga: Rp 200.000</p>
+            <button onclick="showPurchaseModal('Produk 2', 200000)">Beli</button>
+        </div>
+    </section>
+
+    <section class="tentang">
+            <h2>Tentang Kami</h2>
+            <p>Ingin tampil beda? Grizen Clotch hadir dengan pilihan bahan premium dan potongan yang pas di tubuh. Setiap koleksi kami dirancang khusus untuk memenuhi kebutuhan gaya hidup Anda yang dinamis.</p>
+    </section>
+
+    <!-- Modal Pembelian -->
+    <div id="purchaseModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="tutupModal()">&times;</span>
+            <h2>Detail Pembelian</h2>
+            <p id="productName">Produk: </p>
+            <p id="productPrice">Harga: </p>
+            <label for="quantity">Jumlah</label>
+            <input type="number" id="quantity" value="1" min="1">
+            <p id="totalPrice">Total: </p>
+            <button onclick="prosesPembelian()">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <script>
+        function showPurchaseModal(productName, productPrice) {
+            document.getElementById('productName').innerText = 'Produk: ' + productName;
+            document.getElementById('productPrice').innerText = 'Harga: Rp ' + productPrice;
+            document.getElementById('quantity').value = 1;
+            hitungTotal(productPrice);
+            document.getElementById('purchaseModal').style.display = 'block';
+        }
+
+        function hitungTotal(productPrice) {
+            let quantity = document.getElementById('quantity').value;
+            let total = quantity * productPrice;
+            document.getElementById('totalPrice').innerText = 'Total: Rp ' + total;
+        }
+
+        function tutupModal() {
+            document.getElementById('purchaseModal').style.display = 'none';
+        }
+
+        function prosesPembelian() {
+            alert('Pembelian berhasil!');
+            tutupModal();
+        }
+
+        document.getElementById('quantity').addEventListener('input', function() {
+            let productPrice = parseInt(document.getElementById('productPrice').innerText.replace('Harga: Rp ', ''));
+            hitungTotal(productPrice);
+        });
+    </script>
+</body>
+</html>

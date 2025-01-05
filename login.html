@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #E8F5E9; /* Light green background */
+            color: #2E7D32; /* Dark green text */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            background: #A5D6A7; /* Soft green */
+            border-radius: 10px;
+            overflow: hidden;
+            width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-section {
+            flex: 1;
+            padding: 40px;
+            position: relative;
+        }
+
+        .welcome-section h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .welcome-section .learn-more {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #66BB6A; /* Green button */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .form-section {
+            flex: 1;
+            background: #C8E6C9; /* Light green */
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: #A5D6A7; /* Soft green input */
+            color: #2E7D32;
+        }
+
+        .submit-button {
+            background: linear-gradient(45deg, #81C784, #66BB6A); /* Gradient green button */
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #2E7D32; /* Dark green icons */
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #66BB6A; /* Lighter green hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-section">
+            <h1>Selamat Datang di Grizen clotch!</h1>
+            <p>Website pembelian Baju yang ramah untuk kantong anak muda</p>
+            <a href="#" class="learn-more">selengkap nya</a>
+        </div>
+        <div class="form-section">
+            <h2>masuk</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">User Name</label>
+                    <input type="text" id="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="submit-button">Kirim</button>
+            </form>
+            <div class="social-icons">
+                <img src="image/LOGO GRIZEN CLOTCH.png"  width="100" height="100">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
